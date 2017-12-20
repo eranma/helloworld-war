@@ -1,5 +1,5 @@
 # common shell routines for s2i scripts
-
+echo "---------------------------------------starting common --------------------"
 # insert settings for HTTP proxy into settings.xml if supplied as
 # separate variables HTTP_PROXY_HOST, _PORT, _SCHEME, _USERNAME,
 # _PASSWORD, _NONPROXYHOSTS
@@ -27,7 +27,7 @@ function configure_proxy_write() {
     sed -i "s^${sub}^${xml}^" "$settings"
   fi
 }
-
+echo "---------------------------------------starting common 1 --------------------"
 # break a supplied url (as would be in HTTP_PROXY) up into constituent bits and
 # export the bits as variables that match our old scheme for configuring proxies
 # $settings - file to edit
@@ -48,7 +48,7 @@ function configure_proxy_url() {
     fi
   fi
 }
-
+echo "---------------------------------------starting common 2 --------------------"
 function configure_proxy() {
   local httpsProxy="${https_proxy:-${HTTPS_PROXY}}"
   local httpProxy="${http_proxy:-${HTTP_PROXY}}"
@@ -142,7 +142,7 @@ function copy_artifacts() {
     done
   done
 }
-
+echo "---------------------------------------starting common 3 --------------------"
 # handle incremental builds. If we have been passed build artifacts, untar
 # them over the supplied source.
 manage_incremental_build() {
@@ -166,3 +166,4 @@ clear_maven_repository() {
         rm -rf ${HOME}/.m2/repository/*
     fi
 }
+echo "---------------------------------------ending common --------------------"

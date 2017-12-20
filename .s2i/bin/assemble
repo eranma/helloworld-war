@@ -1,11 +1,11 @@
 #!/bin/sh
-echo"---------------------------------------------Starting build 0 --------------"
+echo "---------------------------------------------++Starting build 0 --------------"
 echo "dirname: "$dirname
 echo "dirname $0: "$(dirname $0)
 echo "$0 "$0
 . $(dirname $0)/common.sh
 . /opt/rh/rh-maven33/enable
-echo"---------------------------------------------Starting build 1--------------"
+echo "---------------------------------------------++Starting build 1--------------"
 LOCAL_SOURCE_DIR=/tmp/src
 mkdir -p $LOCAL_SOURCE_DIR
 

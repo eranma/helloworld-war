@@ -1,4 +1,6 @@
 
+
+release -1
 12345
 # Helloworld WAR
 
